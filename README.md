@@ -239,13 +239,12 @@ def verPaciente(request):
 ```
 Puedo imprimir sus variables en el template de la forma:
 ```html
+...
 <p>{{paciente.nombre}}</p>
 <p>{{paciente.apellido}}</p>
 <p>{{paciente.peso}}</p>
 {% for enfermedad in paciente.enfermedades %}
 	<p>{{ enfermedad }}</p>
 {% endfor %}
-.
-.
-.
+...
 ```
