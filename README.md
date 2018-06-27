@@ -14,8 +14,11 @@ python3 manage.py runserver ip:puerto
 ip:puerto/interfaces/
 
 #### Ejemplo: 
-python3 manage.py runserver localhost:8500
-entrar a: localhost:8500/interfaces/
+python3 manage.py runserver localhost:8500 entrar a:
+
+``` bash
+localhost:8500/interfaces/
+``` 
 
 *********************
 
