@@ -243,7 +243,7 @@ Puedo imprimir sus variables en el template de la forma:
 <p>{{paciente.apellido}}</p>
 <p>{{paciente.peso}}</p>
 {% for enfermedad in paciente.enfermedades %}
-<p>{{ enfermedad }}</p>
+	<p>{{ enfermedad }}</p>
 {% endfor %}
 .
 .
