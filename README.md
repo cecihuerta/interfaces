@@ -14,8 +14,11 @@ python3 manage.py runserver ip:puerto
 ip:puerto/interfaces/
 
 #### Ejemplo: 
-python3 manage.py runserver localhost:8500
-entrar a: localhost:8500/interfaces/
+python3 manage.py runserver localhost:8500 entrar a:
+
+``` bash
+localhost:8500/interfaces/
+``` 
 
 *********************
 
@@ -152,31 +155,31 @@ En el template.html se tiene
 </form>
 ```
 
+Se crea un form en html, usando metodo POST.
 ```html
 <form method="post">
   ...
 </form>
 ```
-Crea un form en html, usando metodo POST.
 
+Método de seguridad que se implementa en django, se debe incluir en los formularios.
 ```html
 {% csrf_token %}
 ```
-Es un método de seguridad que se implementa en django, se debe incluir en los formularios.
 
+Se itera sobre el form enviado desde la vista (recordar se envío 'form':buscadorForm).
+Por cada campo de este form se imprime el label y se crea su campo.
 ```html
 {% for field in form %}
 		<p>{{ field.label }}</p>
 		{{ field }}
 {% endfor %}
 ```
-Se itera sobre el form enviado desde la vista (recordar se envío 'form':buscadorForm).
-Por cada campo de este form se imprime el label y se crea su campo.
 
+Botón de html para el form.
 ```html
 <input type="submit" name="submit" value="Enviar" />
 ```
-Botón de html para el form.
 
 ## models.py
 
