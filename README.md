@@ -45,7 +45,8 @@ Distribución de archivos y carpetas:
 ``` bash
 myapp/
   |-manage.py
-  |-grupo4test/
+  |-interfaces/
+  |-myapp/
 ```
  
 En myapp/grupo4test se encuentra el programa.
