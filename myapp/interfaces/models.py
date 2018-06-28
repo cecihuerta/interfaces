@@ -8,11 +8,8 @@ class Enfermedad(models.Model):
 		return self.nombre
 
 class Paciente(models.Model):
-	nombre = models.CharField(max_length=31)
-	apellido = models.CharField(max_length=31)
-	edad = models.IntegerField(default = 0)
-	email = models.EmailField(unique=True, blank=True, null=True)
 	cuenta = models.OneToOneField(User, on_delete=models.CASCADE)
+	edad = models.IntegerField(default = 0)
 	enfermedad = models.ManyToManyField(Enfermedad)
 	estatura = models.FloatField(default=0.0)
 	max_permitido = models.IntegerField(default=0)
@@ -42,6 +39,7 @@ class Preparacion(models.Model):
 		return self.nombre
 
 class Dieta(models.Model):
+	user = models.ForeignKey(Paciente, on_delete=models.CASCADE, null=True)
 	nombre = models.CharField(max_length=31)
 
 	def __str__(self):
@@ -59,6 +57,7 @@ class preparacion_hora(models.Model):
 	    (7, 'Domingo'),
 	)
 
+	user = models.ForeignKey(Paciente, on_delete=models.CASCADE, null=True)
 	dieta = models.ManyToManyField(Dieta)
 	dia = models.CharField(
 		max_length=2,
@@ -69,3 +68,4 @@ class preparacion_hora(models.Model):
 
 	def __str__(self):
 		return self.dieta.nombre + ' ' + self.preparacion.nombre + ' ' + str(self.time)
+

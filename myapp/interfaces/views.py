@@ -29,15 +29,19 @@ def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
-        	print(form.cleaned_data)
+        	print(form.cleaned_data.get('enfermedades'))
         	username = form.cleaned_data.get('username')
         	raw_password = form.cleaned_data.get('password')
         	if User.objects.filter(username=username).count() > 0:
         		return render(request, template, {'form':form,
         										  'error': username + ' ya está registrado.'})
-        	user = User(username=username, password=raw_password, email= form.cleaned_data_ ,first_name=form.cleaned_data.get('nombre'), last_name=form.cleaned_data.get('apellido'))
+        	user = User(username=username,
+                        password=raw_password, 
+                        email= form.cleaned_data,
+                        first_name=form.cleaned_data.get('nombre'),
+                        last_name=form.cleaned_data.get('apellido'))
         	user.save()
-            
+            #paciente = Paciente(edad=form.cleaned_data.get('edad'))
 
 
             #user = authenticate(username=username, password=raw_password)
