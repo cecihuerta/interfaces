@@ -49,7 +49,7 @@ myapp/
   |-myapp/
 ```
  
-En myapp/grupo4test se encuentra el programa.
+En myapp/interfaces/ se encuentra el programa.
 
 Archivos y carpetas relevantes:
 ```
