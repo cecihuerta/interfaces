@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+
+    #app de interfaces
+    'interfaces.apps.InterfacesConfig',
 ]
 
 MIDDLEWARE = [
@@ -73,12 +77,18 @@ WSGI_APPLICATION = 'myapp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'interfaces1',
+        'USER': 'interfaces1',
+        'PASSWORD': '12345',
+        'HOST': 'plop.inf.udec.cl',
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation
@@ -105,7 +115,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+DATE_INPUT_FORMATS = ['%d/%m/%Y']
+
+TIME_ZONE = 'America/Santiago'
 
 USE_I18N = True
 
@@ -118,3 +130,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Donde redireccionan al hacer login/logout
+LOGIN_REDIRECT_URL = '/interfaces/'
+LOGOUT_REDIRECT_URL = '/interfaces/'
