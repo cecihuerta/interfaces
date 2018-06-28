@@ -72,7 +72,7 @@ Donde:
 'path/to/.../url' es la dirección a la que hay que entrar para ingresar a esta página.
 views.'nombre vista' es el nombre de la vista definda en views.py la cual será llamada al entrar a la url.
 
-Ejemplo, para la url del formulario del cliente se tiene:
+Ejemplo, para la url buscador de alimentos se tiene:
 
 ### Url del buscador:
     path('buscador/',views.buscador, name='buscador'),
